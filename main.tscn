@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5ttj4w6ntyio"]
+
+[ext_resource type="Script" uid="uid://df7marldxyhyo" path="res://Scripts/GEb.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://6bcm35txgyh3" path="res://scenes/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c4cowxs6djlrj" path="res://scenes/start_room.tscn" id="2_0xm2m"]
+
+[sub_resource type="Environment" id="Environment_ig7tw"]
+background_mode = 2
+background_energy_multiplier = 0.82
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
+
+[node name="Main" type="Node3D" unique_id=46289560]
+script = ExtResource("1_h2yge")
+
+[node name="Player" parent="." unique_id=1828279372 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-0.0041186847, 0, -0.1999576, 0, 0.2, 0, 0.1999576, 0, -0.0041186847, 0.027991414, 0.050340354, 0.0059569776)
+
+[node name="StartRoom" parent="." unique_id=1929305059 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036254883, -0.0140686035, -0.016693115)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=736460676]
+environment = SubResource("Environment_ig7tw")
